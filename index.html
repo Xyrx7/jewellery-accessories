@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jewellery Accessories - Timeless Elegance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+        }
+
+        .logo-fallback {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #c59d5f 0%, #d4af77 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(197, 157, 95, 0.3);
+        }
+
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo-text .brand {
+            color: #000000;
+        }
+
+        .logo-text .tagline {
+            color: #c59d5f;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu a:hover {
+            color: #c59d5f;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #000000;
+            transition: fill 0.3s;
+        }
+
+        .cart-icon:hover svg {
+            fill: #c59d5f;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #c59d5f;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #000000;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23f4f1ea"/><stop offset="100%" style="stop-color:%23e8dcc8"/></linearGradient></defs><rect fill="url(%23bg)" width="1200" height="800"/><circle cx="300" cy="200" r="80" fill="%23c59d5f" opacity="0.2"/><circle cx="900" cy="500" r="120" fill="%23d4af77" opacity="0.15"/><circle cx="600" cy="600" r="60" fill="%23c59d5f" opacity="0.25"/><path d="M 400 300 Q 450 250 500 300 T 600 300" stroke="%23c59d5f" stroke-width="3" fill="none" opacity="0.3"/><ellipse cx="800" cy="300" rx="100" ry="60" fill="%23d4af77" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            line-height: 1.8;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-hero {
+            background: #c59d5f;
+            color: #ffffff;
+            padding: 16px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(197, 157, 95, 0.4);
+        }
+
+        .btn-hero:hover {
+            background: #d4af77;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(197, 157, 95, 0.6);
+        }
+
+        /* PRODUCT SECTION */
+        .section {
+            padding: 100px 5%;
+            width: 100%;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #000000;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f4f1ea 0%, #e8dcc8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-svg-fallback {
+            display: none;
+        }
+
+        .product-image svg {
+            width: 120px;
+            height: 120px;
+            fill: #c59d5f;
+            opacity: 0.9;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-image svg {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .product-info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .product-price {
+            color: #c59d5f;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .btn-cart {
+            background: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .btn-cart:hover {
+            background: #c59d5f;
+            transform: scale(1.05);
+        }
+
+        /* ABOUT SECTION */
+        .about-section {
+            background: #f8f8f8;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.9;
+            font-size: 17px;
+            color: #555;
+        }
+
+        /* CONTACT SECTION */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #c59d5f 0%, #d4af77 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(197, 157, 95, 0.3);
+        }
+
+        .contact-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: #ffffff;
+        }
+
+        .contact-text {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 5%;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            width: 100%;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: #ffffff;
+                flex-direction: column;
+                width: 100%;
+                padding: 30px 5%;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                transition: left 0.3s;
+                gap: 25px;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .logo-image {
+                height: 40px;
+                max-width: 150px;
+            }
+
+            .logo-text {
+                font-size: 18px;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .logo-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .hero {
+                height: 80vh;
+                min-height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .hero-content {
+                padding: 25px 20px;
+                margin: 0 15px;
+            }
+
+            .btn-hero {
+                padding: 14px 40px;
+                font-size: 15px;
+            }
+
+            .section-title {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .product-image {
+                height: 280px;
+            }
+
+            .product-name {
+                font-size: 20px;
+            }
+
+            .product-price {
+                font-size: 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+
+            .about-content {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 15px 4%;
+            }
+
+            .logo-image {
+                height: 35px;
+                max-width: 130px;
+            }
+
+            .logo-text {
+                font-size: 16px;
+            }
+
+            .cart-icon svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .hero p {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .hero-content {
+                padding: 20px 15px;
+            }
+
+            .btn-hero {
+                padding: 12px 35px;
+                font-size: 14px;
+            }
+
+            .section {
+                padding: 50px 4%;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 35px;
+            }
+
+            .product-image {
+                height: 250px;
+            }
+
+            .product-info {
+                padding: 25px 20px;
+            }
+
+            .product-name {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .product-price {
+                font-size: 18px;
+                margin-bottom: 18px;
+            }
+
+            .btn-cart {
+                padding: 10px 30px;
+                font-size: 13px;
+            }
+
+            .about-content {
+                font-size: 14px;
+            }
+
+            .contact-icon {
+                width: 55px;
+                height: 55px;
+            }
+
+            .contact-icon svg {
+                width: 26px;
+                height: 26px;
+            }
+
+            .contact-text {
+                font-size: 15px;
+            }
+
+            .footer {
+                padding: 25px 4%;
+                font-size: 13px;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- NAVBAR -->
+  <nav class="navbar">
+   <div class="logo-container"><img src="logo-jewellery.png" alt="Jewellery Accessories Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="logo-fallback" style="display: none;">
+     <div class="logo-icon">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L4 7v4c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-8-5zm0 2.18l6 3.75v3.57c0 4.55-3.07 8.86-6 9.95-2.93-1.09-6-5.4-6-9.95V7.93l6-3.75zM12 9c-1.38 0-2.5 1.12-2.5 2.5S10.62 14 12 14s2.5-1.12 2.5-2.5S13.38 9 12 9z" />
+      </svg>
+     </div>
+     <div class="logo-text"><span class="brand">Jewellery</span> <span class="tagline">Accessories</span>
+     </div>
+    </div>
+   </div>
+   <ul class="nav-menu" id="navMenu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#product">Product</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+   </ul>
+   <div class="nav-icons">
+    <div class="cart-icon" onclick="checkoutWhatsApp()" title="Checkout via WhatsApp">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4V8h16v11z" />
+     </svg><span class="cart-badge" id="cartCount">0</span>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span> <span></span> <span></span>
+    </div>
+   </div>
+  </nav><!-- HERO SECTION -->
+  <section class="hero" id="home">
+   <div class="hero-content">
+    <h1 id="heroTitle">Timeless Elegance</h1>
+    <p id="heroSubtitle">Temukan keindahan sejati dalam setiap detail koleksi perhiasan eksklusif kami.</p><a href="#product" class="btn-hero" id="heroButton">Shop Now</a>
+   </div>
+  </section><!-- PRODUCT SECTION -->
+  <section class="section" id="product">
+   <h2 class="section-title" id="productTitle">Featured Collection</h2>
+   <div class="product-grid">
+    <div class="product-card">
+     <div class="product-image"><img src="produk1.jpeg" alt="Anting, Hoop Ornamen Anting" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <svg class="product-svg-fallback" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5" /> <circle cx="12" cy="8" r="3" fill="currentColor" /> <path d="M6 8 L3 5 M18 8 L21 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /> <circle cx="12" cy="8" r="1.5" fill="#fff" opacity="0.7" />
+      </svg>
+     </div>
+     <div class="product-info">
+      <h3 class="product-name" id="product1Name">Anting, Hoop Ornamen Anting</h3>
+      <p class="product-price" id="product1Price">Rp 55.000</p><button class="btn-cart" onclick="addToCart(document.getElementById('product1Name').textContent, document.getElementById('product1Price').textContent)">Add to Cart</button>
+     </div>
+    </div>
+    <div class="product-card">
+     <div class="product-image"><img src="produk2.jpeg" alt="Gelang Rantai Tebal" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <svg class="product-svg-fallback" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12 Q4 8, 8 8 L16 8 Q20 8, 20 12 Q20 16, 16 16 L8 16 Q4 16, 4 12Z" fill="none" stroke="currentColor" stroke-width="2" /> <circle cx="8" cy="12" r="1.5" fill="currentColor" /> <circle cx="12" cy="12" r="1.5" fill="currentColor" /> <circle cx="16" cy="12" r="1.5" fill="currentColor" />
+      </svg>
+     </div>
+     <div class="product-info">
+      <h3 class="product-name" id="product2Name">Gelang Rantai Tebal</h3>
+      <p class="product-price" id="product2Price">Rp 60.000</p><button class="btn-cart" onclick="addToCart(document.getElementById('product2Name').textContent, document.getElementById('product2Price').textContent)">Add to Cart</button>
+     </div>
+    </div>
+    <div class="product-card">
+     <div class="product-image"><img src="produk3.jpeg" alt="Kalung + Liotin" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <svg class="product-svg-fallback" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 4 Q6 6, 6 10 L6 14 Q6 16, 8 18 L12 21 L16 18 Q18 16, 18 14 L18 10 Q18 6, 16 4" fill="none" stroke="currentColor" stroke-width="1.5" /> <circle cx="12" cy="15" r="2.5" fill="currentColor" /> <circle cx="12" cy="15" r="1.2" fill="#fff" opacity="0.7" />
+      </svg>
+     </div>
+     <div class="product-info">
+      <h3 class="product-name" id="product3Name">Kalung + Liotin</h3>
+      <p class="product-price" id="product3Price">Rp 65.000</p><button class="btn-cart" onclick="addToCart(document.getElementById('product3Name').textContent, document.getElementById('product3Price').textContent)">Add to Cart</button>
+     </div>
+    </div>
+    <div class="product-card">
+     <div class="product-image"><img src="produk4.jpeg" alt="Gelang Rantai (Beberapa Varian)" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <svg class="product-svg-fallback" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12 Q4 9, 7 9 L17 9 Q20 9, 20 12 Q20 15, 17 15 L7 15 Q4 15, 4 12Z" fill="none" stroke="currentColor" stroke-width="1.8" /> <rect x="7" y="11" width="2" height="2" fill="currentColor" /> <rect x="11" y="11" width="2" height="2" fill="currentColor" /> <rect x="15" y="11" width="2" height="2" fill="currentColor" />
+      </svg>
+     </div>
+     <div class="product-info">
+      <h3 class="product-name" id="product4Name">Gelang Rantai (Beberapa Varian)</h3>
+      <p class="product-price" id="product4Price">Rp 65.000</p><button class="btn-cart" onclick="addToCart(document.getElementById('product4Name').textContent, document.getElementById('product4Price').textContent)">Add to Cart</button>
+     </div>
+    </div>
+    <div class="product-card">
+     <div class="product-image"><img src="produk5.jpeg" alt="Cincin" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <svg class="product-svg-fallback" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5" /> <circle cx="12" cy="12" r="3" fill="currentColor" /> <path d="M12 4 L12 8 M12 16 L12 20 M4 12 L8 12 M16 12 L20 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+      </svg>
+     </div>
+     <div class="product-info">
+      <h3 class="product-name" id="product5Name">Cincin</h3>
+      <p class="product-price" id="product5Price">Rp 50.000</p><button class="btn-cart" onclick="addToCart(document.getElementById('product5Name').textContent, document.getElementById('product5Price').textContent)">Add to Cart</button>
+     </div>
+    </div>
+    <div class="product-card">
+     <div class="product-image"><img src="produk6.jpeg" alt="Gelang Rantai Tipis" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <svg class="product-svg-fallback" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12 Q4 10, 6 10 L18 10 Q20 10, 20 12 Q20 14, 18 14 L6 14 Q4 14, 4 12Z" fill="none" stroke="currentColor" stroke-width="1.2" /> <circle cx="8" cy="12" r="0.8" fill="currentColor" /> <circle cx="12" cy="12" r="0.8" fill="currentColor" /> <circle cx="16" cy="12" r="0.8" fill="currentColor" />
+      </svg>
+     </div>
+     <div class="product-info">
+      <h3 class="product-name" id="product6Name">Gelang Rantai Tipis</h3>
+      <p class="product-price" id="product6Price">Rp 60.000</p><button class="btn-cart" onclick="addToCart(document.getElementById('product6Name').textContent, document.getElementById('product6Price').textContent)">Add to Cart</button>
+     </div>
+    </div>
+   </div>
+  </section><!-- ABOUT SECTION -->
+  <section class="section about-section" id="about">
+   <h2 class="section-title" id="aboutTitle">About Us</h2>
+   <div class="about-content">
+    <p id="aboutText">Kami adalah brand perhiasan premium yang menghadirkan koleksi eksklusif dengan desain timeless dan material berkualitas tinggi. Setiap produk kami dibuat dengan perhatian detail yang sempurna, menggunakan titanium murni dan precious stones pilihan terbaik. Visi kami adalah menghadirkan keindahan abadi yang menemani setiap momen berharga dalam hidup Anda. Dengan craftsmanship yang luar biasa dan dedikasi terhadap kualitas, kami berkomitmen memberikan perhiasan yang tidak hanya indah dipandang, tetapi juga tahan lama dan nyaman digunakan setiap hari.</p>
+   </div>
+  </section><!-- CONTACT SECTION -->
+  <section class="section" id="contact">
+   <h2 class="section-title" id="contactTitle">Contact Us</h2>
+   <div class="contact-grid">
+    <div class="contact-item">
+     <div class="contact-icon">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+      </svg>
+     </div>
+     <p class="contact-text" id="contactLocation">Tanjung Morawa,<br>
+      Deli Serdang</p>
+    </div>
+    <div class="contact-item">
+     <div class="contact-icon">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" /> <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2c-.15.504.303.957.806.806l3.032-.892C7.887 21.525 9.773 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+      </svg>
+     </div>
+     <p class="contact-text" id="contactWhatsapp">+62 812 3456 7890</p>
+    </div>
+    <div class="contact-item">
+     <div class="contact-icon">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+      </svg>
+     </div>
+     <p class="contact-text" id="contactEmail">sgysdffg@gmail.com</p>
+    </div>
+   </div>
+  </section><!-- FOOTER -->
+  <footer class="footer">
+   <p>© 2026 Jewellery Accessories. All Rights Reserved.</p>
+  </footer>
+  <script>
+        // Default configuration
+        const defaultConfig = {
+            hero_title: "Timeless Elegance",
+            hero_subtitle: "Temukan keindahan sejati dalam setiap detail koleksi perhiasan eksklusif kami.",
+            hero_button: "Shop Now",
+            product_title: "Featured Collection",
+            product_1_name: "Anting, Hoop Ornamen Anting",
+            product_1_price: "Rp 55.000",
+            product_2_name: "Gelang Rantai Tebal",
+            product_2_price: "Rp 60.000",
+            product_3_name: "Kalung + Liotin",
+            product_3_price: "Rp 65.000",
+            product_4_name: "Gelang Rantai (Beberapa Varian)",
+            product_4_price: "Rp 65.000",
+            product_5_name: "Cincin",
+            product_5_price: "Rp 50.000",
+            product_6_name: "Gelang Rantai Tipis",
+            product_6_price: "Rp 60.000",
+            about_title: "About Us",
+            about_text: "Kami adalah brand perhiasan premium yang menghadirkan koleksi eksklusif dengan desain timeless dan material berkualitas tinggi. Setiap produk kami dibuat dengan perhatian detail yang sempurna, menggunakan titanium murni dan precious stones pilihan terbaik. Visi kami adalah menghadirkan keindahan abadi yang menemani setiap momen berharga dalam hidup Anda. Dengan craftsmanship yang luar biasa dan dedikasi terhadap kualitas, kami berkomitmen memberikan perhiasan yang tidak hanya indah dipandang, tetapi juga tahan lama dan nyaman digunakan setiap hari.",
+            contact_title: "Contact Us",
+            contact_location: "Tanjung Morawa,<br>Deli Serdang",
+            contact_whatsapp: "+62 812 3456 7890",
+            contact_email: "sgysdffg@gmail.com"
+        };
+
+        // Cart functionality
+        let cartItems = [];
+        let cartCount = 0;
+
+        function addToCart(productName, productPrice) {
+            // Tambahkan produk ke array keranjang
+            cartItems.push({
+                name: productName,
+                price: productPrice
+            });
+            
+            cartCount++;
+            document.getElementById('cartCount').textContent = cartCount;
+            
+            // Tampilkan notifikasi
+            showNotification(`${productName} ditambahkan ke keranjang! 🛒`);
+        }
+
+        function showNotification(message) {
+            // Buat elemen notifikasi
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: linear-gradient(135deg, #c59d5f 0%, #d4af77 100%);
+                color: white;
+                padding: 20px 30px;
+                border-radius: 12px;
+                box-shadow: 0 8px 25px rgba(197, 157, 95, 0.4);
+                z-index: 10000;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+                font-size: 15px;
+                animation: slideIn 0.3s ease-out;
+                max-width: 350px;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            // Hapus notifikasi setelah 3 detik
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        function checkoutWhatsApp() {
+            if (cartItems.length === 0) {
+                showNotification('Keranjang Anda masih kosong! 🛒');
+                return;
+            }
+
+            // Hitung total harga
+            let totalPrice = 0;
+            cartItems.forEach(item => {
+                // Hapus "Rp" dan "." dari harga, lalu convert ke number
+                const priceNumber = parseInt(item.price.replace(/[^0-9]/g, ''));
+                totalPrice += priceNumber;
+            });
+
+            // Format total harga dengan titik pemisah ribuan
+            const formattedTotal = 'Rp ' + totalPrice.toLocaleString('id-ID');
+
+            // Buat pesan WhatsApp
+            let message = '🛍️ Pesanan Jewellery Accessories\n\n';
+            message += '----------------------------\n\n';
+            
+            cartItems.forEach((item, index) => {
+                message += `${index + 1}. ${item.name}\n`;
+                message += `   Harga: ${item.price}\n\n`;
+            });
+            
+            message += '----------------------------\n';
+            message += `📦 Total Produk: ${cartItems.length} item\n`;
+            message += `💰 Total Harga: ${formattedTotal}\n\n`;
+            message += 'Saya tertarik untuk membeli produk di atas. Mohon informasi lebih lanjut. Terima kasih.';
+
+            // Encode pesan untuk URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Nomor WhatsApp (ganti dengan nomor Anda)
+            const whatsappNumber = '6281234567890'; // Ganti dengan nomor Anda tanpa +
+            
+            // Buka WhatsApp di tab baru
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+            
+            showNotification('Mengarahkan ke WhatsApp... 📱');
+        }
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking nav links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Element SDK implementation
+        async function onConfigChange(config) {
+            document.getElementById('heroTitle').textContent = config.hero_title || defaultConfig.hero_title;
+            document.getElementById('heroSubtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+            document.getElementById('heroButton').textContent = config.hero_button || defaultConfig.hero_button;
+            document.getElementById('productTitle').textContent = config.product_title || defaultConfig.product_title;
+            document.getElementById('product1Name').textContent = config.product_1_name || defaultConfig.product_1_name;
+            document.getElementById('product1Price').textContent = config.product_1_price || defaultConfig.product_1_price;
+            document.getElementById('product2Name').textContent = config.product_2_name || defaultConfig.product_2_name;
+            document.getElementById('product2Price').textContent = config.product_2_price || defaultConfig.product_2_price;
+            document.getElementById('product3Name').textContent = config.product_3_name || defaultConfig.product_3_name;
+            document.getElementById('product3Price').textContent = config.product_3_price || defaultConfig.product_3_price;
+            document.getElementById('product4Name').textContent = config.product_4_name || defaultConfig.product_4_name;
+            document.getElementById('product4Price').textContent = config.product_4_price || defaultConfig.product_4_price;
+            document.getElementById('product5Name').textContent = config.product_5_name || defaultConfig.product_5_name;
+            document.getElementById('product5Price').textContent = config.product_5_price || defaultConfig.product_5_price;
+            document.getElementById('product6Name').textContent = config.product_6_name || defaultConfig.product_6_name;
+            document.getElementById('product6Price').textContent = config.product_6_price || defaultConfig.product_6_price;
+            document.getElementById('aboutTitle').textContent = config.about_title || defaultConfig.about_title;
+            document.getElementById('aboutText').textContent = config.about_text || defaultConfig.about_text;
+            document.getElementById('contactTitle').textContent = config.contact_title || defaultConfig.contact_title;
+            document.getElementById('contactLocation').innerHTML = config.contact_location || defaultConfig.contact_location;
+            document.getElementById('contactWhatsapp').textContent = config.contact_whatsapp || defaultConfig.contact_whatsapp;
+            document.getElementById('contactEmail').textContent = config.contact_email || defaultConfig.contact_email;
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig: defaultConfig,
+                onConfigChange: onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [],
+                    borderables: [],
+                    fontEditable: undefined,
+                    fontSizeable: undefined
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["hero_title", config.hero_title || defaultConfig.hero_title],
+                    ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+                    ["hero_button", config.hero_button || defaultConfig.hero_button],
+                    ["product_title", config.product_title || defaultConfig.product_title],
+                    ["product_1_name", config.product_1_name || defaultConfig.product_1_name],
+                    ["product_1_price", config.product_1_price || defaultConfig.product_1_price],
+                    ["product_2_name", config.product_2_name || defaultConfig.product_2_name],
+                    ["product_2_price", config.product_2_price || defaultConfig.product_2_price],
+                    ["product_3_name", config.product_3_name || defaultConfig.product_3_name],
+                    ["product_3_price", config.product_3_price || defaultConfig.product_3_price],
+                    ["product_4_name", config.product_4_name || defaultConfig.product_4_name],
+                    ["product_4_price", config.product_4_price || defaultConfig.product_4_price],
+                    ["product_5_name", config.product_5_name || defaultConfig.product_5_name],
+                    ["product_5_price", config.product_5_price || defaultConfig.product_5_price],
+                    ["product_6_name", config.product_6_name || defaultConfig.product_6_name],
+                    ["product_6_price", config.product_6_price || defaultConfig.product_6_price],
+                    ["about_title", config.about_title || defaultConfig.about_title],
+                    ["about_text", config.about_text || defaultConfig.about_text],
+                    ["contact_title", config.contact_title || defaultConfig.contact_title],
+                    ["contact_location", config.contact_location || defaultConfig.contact_location],
+                    ["contact_whatsapp", config.contact_whatsapp || defaultConfig.contact_whatsapp],
+                    ["contact_email", config.contact_email || defaultConfig.contact_email]
+                ])
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9be5f20f9294ea7a',t:'MTc2ODQ4NjExMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
