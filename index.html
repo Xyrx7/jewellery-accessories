@@ -15,8 +15,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             color: #333;
-            background-image: url('bg.jpg');
-            box-sizing: border-box;
+            background-image: url('bg.jpg'); /* ← pastikan sama */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -32,16 +31,11 @@
         .navbar {
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
-            background: #ffffff;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
             width: 100%;
+            background: rgba(210, 190, 165, 0.85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            z-index: 1000;
         }
 
         .logo-container {
@@ -183,6 +177,7 @@
             color: #ffffff;
             position: relative;
             width: 100%;
+            background: transparent;
         }
 
         .hero-content {
@@ -236,6 +231,7 @@
         .section {
             padding: 100px 5%;
             width: 100%;
+            background: transparent;
         }
 
         .section-title {
@@ -981,6 +977,7 @@
     </script>
  </body>
 </html>
+
 
 
 
